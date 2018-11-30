@@ -15,7 +15,12 @@ $json = file_get_contents($json_url);
 $data = json_decode($json);
 
 $bargraph_height = 161 + $data->temperature * 4 ;
-$bargraph_top = 315 - $data->temperature *4 ;
+$bargraph_top = 315 - $data->temperature * 4 ;
+
+$datMod = 'data.txt';
+      if (file_exists($datMod)) {
+        echo "Le texte a été modifié le : " . date("d-m-Y H:i:s.", filectime($datMod));
+      }
 
 ?>
 
