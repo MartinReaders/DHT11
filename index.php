@@ -10,10 +10,19 @@
 	
 	<?php 
 
-echo ("hello world");
+$json_url = "data.txt";
+$json = file_get_contents($json_url);
+$data = json_decode($json);
 
 
- ?>
+?>
+
+<p>il fait <?php echo $data->temperature; ?>°C et humidite est <?php echo  $data->humidite; ?>%</p>
+
+<div id="thermometer">
+	
+  <div id="bargraph"></div>
+</div>
 
 </body>
 </html>
